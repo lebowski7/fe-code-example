@@ -6,17 +6,17 @@ import { IState } from './store/IState';
 
 import './App.css';
 
+interface IProps {
+  table: ITable,
+  organisation: string,
+}
+
 const mapStateToProps = (state: IState): IProps => {
   return {
     table: state.content,
     organisation: state.organisation,
   }
 };
-
-interface IProps {
-  table: ITable,
-  organisation: string,
-}
 
 const Component = (props: IProps) => (
   <div>
