@@ -8,6 +8,7 @@ type Actions = Action<any>
 const defaultState: IState = {
   content: [
     {
+      id: 1,
       description: 'Description',
       name: 'Repo 1',
       url: 'https://github.com/org/repo1',
@@ -17,6 +18,7 @@ const defaultState: IState = {
       watchers: 0,
     },
     {
+      id: 2,
       name: 'Repo 2',
       url: 'https://github.com/org/repo2',
       description: 'Description',

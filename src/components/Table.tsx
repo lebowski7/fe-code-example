@@ -5,6 +5,7 @@ import './Table.css';
 export type ITable = IRow[];
 
 export interface IRow {
+  id: number
   name: string
   url: string
   description: string
@@ -36,7 +37,7 @@ export const Table = (props: IProps) => (
     </thead>
     <tbody>
       {props.rows.map((row: IRow) => (
-        <tr>
+        <tr key={row.id}>
           <td>{row.name}</td>
           <td>{row.url}</td>
           <td>{row.description}</td>
