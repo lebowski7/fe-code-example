@@ -2,7 +2,7 @@
 
 The goal of this project is to create a single-page app that will grab a list of GitHub repositories for a specific organization and display their name, url, description, license, number of opened issues, forks, watchers and contributors in a single table.
 
-This boilerplate consists of a preconfigured React + redux app based on create-react-app-typescript project. By default, it will show just some mock data in a table to make obvious what structure we expect + some TS interfaces (like app's state for example). Feel free to make any changes you want.
+This boilerplate consists of a preconfigured React + redux app based on [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript) project. By default, it will show just some mock data in a table to make obvious what structure we expect + some TS interfaces (like app's state for example). Feel free to make any changes you want.
 
 This is a list of features to implement:
 
