@@ -1,0 +1,144 @@
+.repos {
+  border: 1px solid #d1d5da;
+  border-radius: 3px;
+  overflow-y: auto;
+  width: 960px;
+}
+
+.repos-header, .repo-item, .repo-main, .repo-extra {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.repos-header {
+  border-bottom: 1px solid #d1d5da;
+  padding: 15px 0 15px 0px;
+  font-weight: 600;
+  color: #000;
+  background-color: #f6f8fa;
+}
+
+.repo-wrapper {
+  border-bottom: 1px solid #d1d5da;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.repo-wrapper:last-child {
+  border-bottom: 0;
+}
+
+.repo-wrapper .repo-name:after {
+  content: "⮟";
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -9px;
+  text-align: center;
+  line-height: 20px;
+  position: absolute;
+  left: 5px;
+  color: #a31ac9;
+}
+
+.repo-wrapper.open, .repo-wrapper:hover {
+  background-color: #f1f3f5;
+}
+
+.repo-wrapper.open .repo-name:after {
+  transform:rotateX(180deg);
+}
+
+.repo-main > div, .repo-extra > div {
+  padding-right: 5px;
+}
+
+.repo-name {
+  width: 160px;
+  padding-left: 30px;
+  font-weight: bold;
+  position: relative;
+}
+
+.repo-url {
+  width: 300px;
+}
+
+.repo-licence {
+  width: 150px;
+}
+
+.repo-issues {
+  width: 60px;
+}
+
+.repo-forks {
+  width: 60px;
+}
+
+.repo-watchers {
+  width: 80px;
+}
+
+.repo-contributors {
+  width: 120px;
+}
+
+.repo-description {
+  color: #555;
+  font-style: italic;
+  padding: 10px 0 0 0;
+  margin: 15px 0 0 30px;
+  border-top: 1px dashed #ddd;
+}
+
+.repo-dropdown {
+  max-height: 0;
+  opacity: 0;
+  transition: all .3s;
+  overflow-y: hidden;
+  padding-left: 30px;
+}
+
+.repo-dropdown ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.repo-dropdown li {
+  padding: 5px 0;
+}
+
+.repo-dropdown li .octicon {
+  color: #4c6cae;
+  font-size: 18px;
+  margin-right: 6px;
+}
+
+.repo-wrapper.open .repo-dropdown {
+  max-height: 500px;
+  padding-top: 5px;
+  margin-top: 10px;
+  visibility: visible;
+  opacity: 1;
+}
+
+.center {
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .repos {
+    width: 100%;
+  }
+
+  .repo-item {
+    display: block;
+  }
+
+  .repos-header .repo-extra {
+    display: none;
+  }
+}

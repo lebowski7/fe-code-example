@@ -4,11 +4,10 @@ import { Provider } from 'react-redux';
 
 import { App } from './App';
 import { store } from './store';
-
+import 'typeface-lato';
 import './index.css';
 
 import registerServiceWorker from './registerServiceWorker';
-
 
 ReactDOM.render(
   <Provider store={store}>

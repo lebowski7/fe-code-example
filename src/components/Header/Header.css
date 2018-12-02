@@ -1,0 +1,36 @@
+header {
+  background-color: #0a90ae;
+  background-image: linear-gradient(to right, #0a90ae, #14acae);
+  color: #fff;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-weight: 300;
+  font-size: 30px;
+}
+
+.subtitle {
+  font-size: 24px;
+  color: #cbeff4;
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    display: block;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+}

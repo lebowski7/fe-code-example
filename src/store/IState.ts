@@ -1,8 +1,9 @@
-import { ITable } from '../components/Table';
+import { IRepos } from "./types";
 
-export type IContent = ITable
+export type IContent = IRepos;
 
 export interface IState {
-  content: IContent
-  organisation: string
+  repos: IContent
+  organisation: string,
+  loading: boolean
 }

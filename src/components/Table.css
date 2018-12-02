@@ -1,7 +1,0 @@
-.Table {
-  max-width: 960px;
-}
-
-.Table tr:nth-child(even) {
-    background: #eee;
-}
