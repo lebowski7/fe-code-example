@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
-import { Repos } from './components/Repos';
-import { IState } from './store/IState';
+import {Repos} from './components/Repos';
+import {IState} from './store/IState';
 
-import { Dispatch } from "redux";
-import { fetchReposRequest } from "./store/actions";
-import { Loader } from "./components/Loader";
-import { Header } from "./components/Header";
+import {Dispatch} from "redux";
+import {fetchReposRequest} from "./store/actions";
+import {Loader} from "./components/Loader";
+import {Header} from "./components/Header";
 import './App.css';
 
 interface IProps {
@@ -23,17 +23,17 @@ class Component extends React.Component<IProps, {}> {
   }
 
   public render() {
-    const { organisation, loading } = this.props;
+    const {organisation, loading} = this.props;
     return <div className="app">
-      {loading && <div className="global-loader"><Loader /> Loading...</div>}
+      {loading && <div className="global-loader"><Loader/> Loading...</div>}
       {!loading &&
-        <React.Fragment>
-          <Header />
-          <div className="wrapper">
-            <h2>Public repositories for <span className="purple">{organisation}</span>:</h2>
-            <Repos/>
-          </div>
-        </React.Fragment>
+      <React.Fragment>
+        <Header/>
+        <div className="wrapper">
+          <h2>Public repositories for {organisation}:</h2>
+          <Repos/>
+        </div>
+      </React.Fragment>
       }
     </div>
   }

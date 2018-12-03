@@ -1,11 +1,11 @@
 header {
-  background-color: #0a90ae;
-  background-image: linear-gradient(to right, #0a90ae, #14acae);
+  background: #0a90ae linear-gradient(to right, #0a90ae, #14acae);
   color: #fff;
-  padding: 1rem 1rem;
+  padding: 1.5rem 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-width: 320px;
 }
 
 h1 {

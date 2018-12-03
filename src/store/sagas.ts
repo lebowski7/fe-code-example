@@ -1,6 +1,6 @@
-import { all, call, put, takeEvery } from 'redux-saga/effects';
+import {all, call, put, takeEvery} from 'redux-saga/effects';
 
-import {fetchContributorsService, fetchReposService} from './services';
+import {fetchContributorsService, fetchReposService} from '../services';
 import {
   fetchReposSuccess,
   fetchReposError,
@@ -8,7 +8,8 @@ import {
   fetchContributorsError,
   actionTypes
 } from './actions';
-import { IFetchContributorsRequestAction, IRepo } from './types';
+import {IRepo} from './types';
+import {IFetchContributorsRequestAction} from "./IActions";
 
 export function* fetchRepos() {
   try {
@@ -19,11 +20,13 @@ export function* fetchRepos() {
   }
 }
 
-export function* fetchContributors(repoName: IFetchContributorsRequestAction) {
+export function* fetchContributors(repos: IFetchContributorsRequestAction) {
   try {
-    const result: number = yield call(fetchContributorsService, repoName.payload);
+    for (const repo of repos.payload) {
+      const result: number = yield call(fetchContributorsService, repo.name);
+      yield put(fetchContributorsSuccess({contributors: result, repoName: repo.name}));
+    }
 
-    yield put(fetchContributorsSuccess({ contributors: result, repoName: repoName.payload }));
   } catch (err) {
     yield put(fetchContributorsError(err));
   }

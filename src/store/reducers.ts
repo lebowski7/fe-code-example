@@ -1,6 +1,6 @@
-import { Reducer } from 'redux';
-import { actions, actionTypes } from "./actions";
-import { IState } from './IState';
+import {Reducer} from 'redux';
+import {actions, actionTypes} from "./actions";
+import {IState} from './IState';
 
 type Actions = actions;
 
@@ -41,7 +41,7 @@ export const appReducers: Reducer<IState> = (state = initialState, action: Actio
       return {
         ...state,
         repos: state.repos.map((item) => {
-          if(item.name === action.payload.repoName) {
+          if (item.name === action.payload.repoName) {
             return {
               ...item,
               contributors: action.payload.contributors

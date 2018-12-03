@@ -1,4 +1,4 @@
-import { IRepos } from "./types";
+import {IRepos} from "./types";
 
 export type IContent = IRepos;
 

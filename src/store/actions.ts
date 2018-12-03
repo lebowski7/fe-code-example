@@ -1,26 +1,30 @@
-import { ActionCreator } from "redux";
+import {ActionCreator} from "redux";
+import {IRepos, IContributorsRequest} from "./types";
 import {
-  IFetchReposErrorAction, IFetchReposRequestAction, IFetchReposSuccessAction,
-  IFetchContributorsErrorAction, IFetchContributorsRequestAction, IFetchContributorsSuccessAction,
-  IRepos, IContributorsRequest
-} from "./types";
+  IFetchContributorsErrorAction,
+  IFetchContributorsRequestAction,
+  IFetchContributorsSuccessAction,
+  IFetchReposErrorAction,
+  IFetchReposRequestAction,
+  IFetchReposSuccessAction
+} from "./IActions";
 
 export enum actionTypes {
-    FETCH_REPOSITORIES_REQUEST = "FETCH_REPOSITORIES_REQUEST",
-    FETCH_REPOSITORIES_SUCCESS = "FETCH_REPOSITORIES_SUCCESS",
-    FETCH_REPOSITORIES_ERROR = "FETCH_REPOSITORIES_ERROR",
-    FETCH_CONTRIBUTORS_REQUEST = "FETCH_CONTRIBUTORS_REQUEST",
-    FETCH_CONTRIBUTORS_SUCCESS = "FETCH_CONTRIBUTORS_SUCCESS",
-    FETCH_CONTRIBUTORS_ERROR = "FETCH_CONTRIBUTORS_ERROR"
+  FETCH_REPOSITORIES_REQUEST = "FETCH_REPOSITORIES_REQUEST",
+  FETCH_REPOSITORIES_SUCCESS = "FETCH_REPOSITORIES_SUCCESS",
+  FETCH_REPOSITORIES_ERROR = "FETCH_REPOSITORIES_ERROR",
+  FETCH_CONTRIBUTORS_REQUEST = "FETCH_CONTRIBUTORS_REQUEST",
+  FETCH_CONTRIBUTORS_SUCCESS = "FETCH_CONTRIBUTORS_SUCCESS",
+  FETCH_CONTRIBUTORS_ERROR = "FETCH_CONTRIBUTORS_ERROR"
 }
 
 export const fetchReposRequest: ActionCreator<IFetchReposRequestAction> = () => ({
-    type: actionTypes.FETCH_REPOSITORIES_REQUEST
+  type: actionTypes.FETCH_REPOSITORIES_REQUEST
 });
 
 export const fetchReposSuccess: ActionCreator<IFetchReposSuccessAction> = (payload: IRepos) => ({
-    type: actionTypes.FETCH_REPOSITORIES_SUCCESS,
-    payload
+  type: actionTypes.FETCH_REPOSITORIES_SUCCESS,
+  payload
 });
 
 export const fetchReposError: ActionCreator<IFetchReposErrorAction> = (error: Error) => ({
@@ -28,7 +32,7 @@ export const fetchReposError: ActionCreator<IFetchReposErrorAction> = (error: Er
   payload: error
 });
 
-export const fetchContributorsRequest: ActionCreator<IFetchContributorsRequestAction> = (payload: string) => ({
+export const fetchContributorsRequest: ActionCreator<IFetchContributorsRequestAction> = (payload: IRepos) => ({
   type: actionTypes.FETCH_CONTRIBUTORS_REQUEST,
   payload
 });
@@ -46,9 +50,10 @@ export const fetchContributorsError: ActionCreator<IFetchContributorsErrorAction
   payload: error
 });
 
-export type actions = IFetchReposRequestAction |
-  IFetchReposSuccessAction |
-  IFetchReposErrorAction |
-  IFetchContributorsRequestAction |
-  IFetchContributorsSuccessAction |
-  IFetchContributorsErrorAction;
+export type actions =
+  IFetchReposRequestAction
+  | IFetchReposSuccessAction
+  | IFetchReposErrorAction
+  | IFetchContributorsRequestAction
+  | IFetchContributorsSuccessAction
+  | IFetchContributorsErrorAction;
