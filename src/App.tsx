@@ -1,14 +1,12 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
-
-import {Repos} from './components/Repos';
-import {IState} from './store/IState';
-
-import {Dispatch} from "redux";
-import {fetchReposRequest} from "./store/actions";
-import {Loader} from "./components/Loader";
-import {Header} from "./components/Header";
+import {Dispatch} from 'redux';
 import './App.css';
+import {Header} from './components/Header';
+import {Loader} from './components/Loader';
+import {Repos} from './components/Repos';
+import {fetchReposRequest} from './store/actions';
+import {IState} from './store/IState';
 
 interface IProps {
   organisation: string,
@@ -16,7 +14,7 @@ interface IProps {
   fetchRepositoriesRequest: () => null
 }
 
-class Component extends React.Component<IProps, {}> {
+class AppComponent extends React.Component<IProps, {}> {
 
   public componentDidMount(): void {
     this.props.fetchRepositoriesRequest();
@@ -24,12 +22,11 @@ class Component extends React.Component<IProps, {}> {
 
   public render() {
     const {organisation, loading} = this.props;
-    return <div className="app">
-      {loading && <div className="global-loader"><Loader/> Loading...</div>}
-      {!loading &&
-      <React.Fragment>
+    return <div className='app'>
+      {loading && <div className='global-loader'><Loader/> Loading...</div>}
+      {!loading && <React.Fragment>
         <Header/>
-        <div className="wrapper">
+        <div className='wrapper'>
           <h2>Public repositories for {organisation}:</h2>
           <Repos/>
         </div>
@@ -54,4 +51,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
 export const App = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Component);
+)(AppComponent);

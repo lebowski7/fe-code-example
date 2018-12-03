@@ -1,5 +1,6 @@
 import {Reducer} from 'redux';
-import {actions, actionTypes} from "./actions";
+import {actions} from './actions';
+import {actionTypes} from './constants';
 import {IState} from './IState';
 
 type Actions = actions;

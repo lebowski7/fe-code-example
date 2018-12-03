@@ -26,6 +26,8 @@
     "@types/react-dom": "^16.0.11",
     "@types/react-redux": "^6.0.10",
     "@types/redux": "^3.6.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
     "typescript": "^3.2.1"
   }
 }

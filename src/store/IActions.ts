@@ -1,6 +1,6 @@
-import {Action} from "redux";
-import {actionTypes} from "./actions";
-import {IRepos, IContributorsRequest} from "./types";
+import {Action} from 'redux';
+import {actionTypes} from './constants';
+import {IContributorsRequest, IRepos} from './types';
 
 export interface IFetchReposRequestAction extends Action {
   type: actionTypes.FETCH_REPOSITORIES_REQUEST;

@@ -50,7 +50,7 @@
 }
 
 .repo-wrapper.open, .repo-wrapper:hover {
-  background-color: #f6f8fa;
+  background-color: #f4f6f8;
 }
 
 .repo-wrapper.open .repo-item:after {
@@ -65,7 +65,7 @@
   padding-right: 5px;
 }
 
-.repo-item > div .label {
+.repo-item div .label {
   display: none;
 }
 
@@ -85,9 +85,6 @@
   word-break: break-all;
 }
 
-.repo-item .repo-licence .label {
-  display: inline-block;
-}
 
 .repo-issues {
   width: 60px;
@@ -136,7 +133,7 @@
 }
 
 .repo-dropdown li .octicon {
-  color: #4c6cae;
+  color: #a31ac9;
   font-size: 18px;
   margin-right: 6px;
 }
@@ -185,6 +182,10 @@
 
   .repo-item .repo-extra .label {
     font-size: 13px;
+  }
+
+  .repo-item .repo-licence .label {
+    display: inline-block;
   }
 
   .repo-description {

@@ -1,15 +1,10 @@
 import {all, call, put, takeEvery} from 'redux-saga/effects';
 
 import {fetchContributorsService, fetchReposService} from '../services';
-import {
-  fetchReposSuccess,
-  fetchReposError,
-  fetchContributorsSuccess,
-  fetchContributorsError,
-  actionTypes
-} from './actions';
+import {fetchContributorsError, fetchContributorsSuccess, fetchReposError, fetchReposSuccess,} from './actions';
+import {actionTypes} from './constants';
+import {IFetchContributorsRequestAction} from './IActions';
 import {IRepo} from './types';
-import {IFetchContributorsRequestAction} from "./IActions";
 
 export function* fetchRepos() {
   try {
@@ -26,7 +21,6 @@ export function* fetchContributors(repos: IFetchContributorsRequestAction) {
       const result: number = yield call(fetchContributorsService, repo.name);
       yield put(fetchContributorsSuccess({contributors: result, repoName: repo.name}));
     }
-
   } catch (err) {
     yield put(fetchContributorsError(err));
   }

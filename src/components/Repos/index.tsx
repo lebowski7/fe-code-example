@@ -1,11 +1,11 @@
 import * as React from 'react';
+import {connect} from 'react-redux';
+import {Dispatch} from 'redux';
+import {fetchContributorsRequest} from '../../store/actions';
 import {IRepo, IRepos} from '../../store/types';
+import {RepoHeader} from './RepoHeader';
+import {RepoItem} from './RepoItem';
 import './Repos.css';
-import {fetchContributorsRequest} from "../../store/actions";
-import {Dispatch} from "redux";
-import {connect} from "react-redux";
-import {RepoHeader} from "./RepoHeader";
-import {RepoItem} from "./RepoItem";
 
 interface IProps {
   repos: IRepos,
@@ -17,7 +17,7 @@ interface IState {
   repos: IRepos
 }
 
-class ReposComponent extends React.Component<IProps, IState> {
+export class ReposComponent extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
     this.state = {
@@ -39,10 +39,10 @@ class ReposComponent extends React.Component<IProps, IState> {
 
   public render() {
     return (
-      <div className="repos-wrapper">
-        <div className="repos">
+      <div className='repos-wrapper'>
+        <div className='repos'>
           <RepoHeader/>
-          <div className="repos-body">
+          <div className='repos-body'>
             {this.props.repos.map((repo: IRepo) => (
               <RepoItem
                 repo={repo}

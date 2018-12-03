@@ -1,9 +1,7 @@
-import {IRepos} from "./types";
-
-export type IContent = IRepos;
+import {IRepos} from './types';
 
 export interface IState {
-  repos: IContent
+  repos: IRepos
   organisation: string,
   loading: boolean
 }
