@@ -1,34 +1,13 @@
-import { Action, createStore } from 'redux';
+import {applyMiddleware, createStore} from 'redux';
+import createSagaMiddleware from 'redux-saga';
+import {actions} from './actions';
+import {IState} from './IState';
+import {appReducers, initialState} from './reducers';
+import rootSaga from './sagas';
 
-import { IState } from './IState';
-import { appReducers } from './reducers';
+const sagaMiddleware = createSagaMiddleware();
+type Actions = actions;
 
-type Actions = Action<any>
+export const store = createStore<IState, Actions, any, any>(appReducers, initialState, applyMiddleware(sagaMiddleware));
 
-const defaultState: IState = {
-  content: [
-    {
-      id: 1,
-      description: 'Description',
-      name: 'Repo 1',
-      url: 'https://github.com/org/repo1',
-      license: 'MIT',
-      issues: 0,
-      forks: 0,
-      watchers: 0,
-    },
-    {
-      id: 2,
-      name: 'Repo 2',
-      url: 'https://github.com/org/repo2',
-      description: 'Description',
-      license: 'MIT',
-      issues: 0,
-      forks: 0,
-      watchers: 0,
-    },
-  ],
-  organisation: 'yahoo',
-};
-
-export const store = createStore<IState, Actions, any, any>(appReducers, defaultState);
+sagaMiddleware.run(rootSaga);

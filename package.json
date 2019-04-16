@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-octicon": "^3.0.1",
     "react-redux": "^5.1.1",
     "react-scripts-ts": "3.1.0",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "redux-saga": "^0.16.2",
+    "typeface-lato": "0.0.54"
   },
   "scripts": {
     "start": "react-scripts-ts start",
@@ -22,6 +26,8 @@
     "@types/react-dom": "^16.0.11",
     "@types/react-redux": "^6.0.10",
     "@types/redux": "^3.6.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
     "typescript": "^3.2.1"
   }
 }
